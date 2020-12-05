@@ -1,8 +1,6 @@
 package de.awtools.textscanner;
 
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.awt.image.BufferedImage;
 
 import net.sourceforge.tess4j.Tesseract;
@@ -25,8 +23,6 @@ public class TextScanner {
         Tesseract tesseract = new Tesseract();
         tesseract.setLanguage("deu");
         tesseract.setOcrEngineMode(1);
-         
-        Path dataDirectory = Paths.get(ClassLoader.getSystemResource("de/awtools/textscanner").toURI());
         tesseract.setDatapath(provider.getDataPath().toString());
          
         String result = tesseract.doOCR(image);

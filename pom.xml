@@ -4,9 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>de.awtools</groupId>
-		<artifactId>master-pom</artifactId>
-		<version>9-java14</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<groupId>de.awtools</groupId>
@@ -15,7 +16,42 @@
 	<packaging>jar</packaging>
 	<name>textscanner</name>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
     <dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	    <!--
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+		-->
+		<!--
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		-->
+
         <dependency>
             <groupId>net.sourceforge.tess4j</groupId>
             <artifactId>tess4j</artifactId>
@@ -35,6 +71,25 @@
             <version>3.12.0</version>
             <scope>test</scope>
         </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
     </dependencies>
+
+    <properties>
+        <!-- Den Eintrag 'project.build.sourceEncoding' NICHT loeschen. Er 
+            wird irgendwo verwendet!? -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <compiler.encoding>UTF-8</compiler.encoding>
+        <compiler.version>14</compiler.version>
+    </properties>
 
 </project>
