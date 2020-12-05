@@ -1,0 +1,11 @@
+# maven
+target
+
+# visual code / eclipse
+.classpath
+.settings
+.project
+.vscode
+
+# tesseract training data
+deu.traineddata
