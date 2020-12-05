@@ -9,3 +9,6 @@ target
 
 # tesseract training data
 deu.traineddata
+
+# local test data
+.*.jpg
