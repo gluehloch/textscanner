@@ -2,6 +2,7 @@ package de.awtools.textscanner;
 
 import javax.imageio.ImageIO;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class TextScannerTest {
@@ -15,6 +16,7 @@ public class TextScannerTest {
     }
 
     @Test
+    @Disabled
     public void scanImage() throws Exception {
         TrainedDataProvider provider = new TrainedDataProvider();
         TextScanner textScanner = new TextScanner(provider); 
