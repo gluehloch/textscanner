@@ -10,14 +10,10 @@ export default class Client {
     }
 
     onSubmit(event) {
-        event.preventDefault();
-        console.log(event);
-        
-        this.fileSelects = document.querySelector('#fileselects');
-        console.dir(this.fileSelects);
-
+        event.preventDefault();        
+        var fileSelects = document.querySelector('#fileselects');
         var formData = new FormData();
-        var files = this.fileSelects.files;
+        var files = fileSelects.files;
         for(var i = 0; i < files.length; i++){
             var file = files[i];
 
@@ -34,8 +30,11 @@ export default class Client {
         xhr.onload = function () {
             // uploadButton.innerHTML = 'Upload';
             if (xhr.status === 200) {
-                // File(s) uploaded
-                alert('File uploaded successfully');
+                const message = document.querySelector('#response');
+                //var node = document.createElement("p");
+                var textnode = document.createTextNode(xhr.responseText);
+                message.append(textnode);
+                // message.innerHTML = node;
             } else {
                 alert('Something went wrong uploading the file.');
             }
