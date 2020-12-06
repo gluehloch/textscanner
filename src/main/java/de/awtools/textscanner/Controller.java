@@ -18,10 +18,12 @@ public class Controller {
 	}
 
 	@PostMapping(value="/scan")
-	public String scan(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
+	public String scan(@RequestParam("files") MultipartFile[] files, RedirectAttributes redirectAttributes) {
 		// ResponseEntity<>
 		// return ResponseEntity.ok("text");
-		redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + file.getOriginalFilename() + "!");
+		redirectAttributes.addFlashAttribute("message", "You successfully uploaded " + files[0].getOriginalFilename() + "!");
+
+        System.out.println("File=" + files[0].getOriginalFilename());
 
 		return "redirect:/";
 	}

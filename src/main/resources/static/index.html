@@ -4,9 +4,10 @@
     </head>
     <body>
         <h1>TextScanner</h1>
-        <form method="post" enctype="multipart/form-data" action="/scan">
+        <form id="startscan" name="startscan" method="post" enctype="multipart/form-data" action="/scan">
             <label>Wählen Sie eine Textdatei (*.txt, *.html usw.) von Ihrem Rechner aus.
-                <input name="file" type="file" size="50" accept="text/*"> 
+                <input id="fileselects" name="fileselects" type="file" multiple="multiple"> 
+                <!-- size="50" accept="text/*" -->
             </label>  
             <button>Submit</button>
           </form>
